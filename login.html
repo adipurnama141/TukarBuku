@@ -1,0 +1,30 @@
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>TukarBuku</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<img src="logo.png" align="middle">
+		<h1>Please Login</h1>
+		<h2>Wrong Combination of Username/Password. Try Again</h2> 
+		<hr><br>
+		<form action="login.php" name="loginForm" onsubmit="return(validateLogin())" method="post">
+			<label>Email or username</label><BR>
+			<input type="text" name="username"></input><BR>
+
+			<label>Password</label><BR>
+			<input type="password" name="password" ></input><BR>
+
+			<button type="submit">LOGIN</button><br>
+		</form>
+		<p> Dont' have an account yet? Register <a href="google.com"> here </a> </p>
+
+	</div>
+</body>
+</html>
+
+
+<script type="text/javascript" src="validation.js">

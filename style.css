@@ -1,0 +1,247 @@
+@font-face {
+    font-family: 'Raleway'; /*a name to be used later*/
+    src: url('Raleway-Regular.ttf'); /*URL to font*/
+}
+
+@font-face {
+    font-family: 'Montserrat'; /*a name to be used later*/
+    src: url('Montserrat-Regular.ttf'); /*URL to font*/
+}
+
+
+
+body {
+	font-family : Raleway;
+}
+
+.wrapper{
+	width: 40%;
+	position: absolute;
+	top: 30px;
+	left: 0;
+	right: 0;
+	margin: auto;
+	padding: 40px;
+	
+}
+
+.inputwrap input {
+	width: 100%;
+ 	height: 40px;
+ 	margin-bottom: 20px;
+ 	margin-top: 10px;
+ 	padding-left: 10px;
+	font-family: Raleway;
+	font-size: 19px;
+}
+
+.wrapper h1 {
+	font-size:25px;
+}
+
+.wrapper h2 {
+	font-size:17px;
+}
+
+.bluebutton {
+	position: absolute;
+	right: 40px;
+	height: 35px;
+	border: none;
+	background-color: rgb(0, 136, 170);
+	color: white;
+	font-weight: 600;
+	font-size: 17px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.bluebutton:hover {
+	background-color: rgb(0, 102, 128);
+
+}
+
+.wrapper img {
+	display: block;
+  margin: 0 auto;
+  width: 78px;
+  margin-bottom: 24px;
+}
+
+.wrapper textarea {
+	height: 81px;
+  	width: 100%;
+  	margin-bottom: 22px;
+  	margin-top: 10px;
+  	resize: none;
+    font-family: Montserrat;
+  	padding: 6px;	
+}
+
+.navbar {
+	width: 100%;
+	height: 40px;
+	table-layout: fixed;
+	text-align: center;
+	font-family: Montserrat;
+	font-size: 12px;
+	border: solid #eee 1px;
+	border-radius: 4px;
+
+	background-color: #f1f1f1;
+  	border-bottom: 1px solid #666;
+  	border-color: #e5e5e5;
+}
+
+.loginregister {
+	border: 1px solid #cacaca;
+	border-radius: 8px;	
+}
+
+
+.catalog {
+	width : 67%;
+	top : 13px;
+
+}
+
+
+
+.navbar td {
+	padding: 5px;	
+}
+
+.navbar td:hover{
+	background-color: #08A;
+  	color: white;
+}
+
+.search {
+	width:100%;
+}
+
+.searchquery {
+	height: 55px !important;
+}
+
+h5 {
+	margin:0px;
+	text-align: right;
+	font-size: 17px;
+}
+
+.active {
+   background-color: #08A;
+  color: white;
+}
+
+
+
+a {
+	text-decoration: none;
+	color: rgb(0, 102, 128);
+}
+
+.stext {
+	width:86%;
+}
+
+.sbutton {
+	background-color: rgb(0, 136, 170);
+  color: white;
+  font-weight: 600;
+  font-size: 17px;
+  border: none;
+  padding: 16px;
+  margin-top: -11px;
+  margin-left: 46px;
+}
+
+.hiddentext {
+	color: white;
+  margin: 0;
+  padding: 0;
+  display: -webkit-inline-box;
+}
+
+.book h5 {
+	text-align: left;
+}
+
+.book img {
+	width : 120px;
+	height : 150px;
+}
+.book h2 {
+	font-size : 26px;
+}
+
+.book table {
+	width: 100%;
+	margin-bottom: -8px;
+
+}
+
+.twobutton {
+	font-family: Montserrat;
+	margin-top:20px;
+	font-size:20px;
+}
+
+._l {
+	color :rgb(0, 136, 170);
+}
+
+._b {
+	color:green;
+}
+
+._e {
+	color:rgb(255, 148, 0);
+}
+
+._d {
+	color:rgb(156, 0, 0);
+}
+.s_update {
+	right : 157px;
+}
+
+.s_cancel {
+	  margin-top: -16px;
+
+}
+
+.hai {
+	text-align: right;
+	font-size: 12px;
+}
+
+.timefg {
+	text-align: left;
+	font-size: 12px;
+}
+
+.buttonfg {
+	position: relative;
+	left : 346px;
+	height: 35px;
+	border: none;
+	background-color: rgb(0, 136, 170);
+	color: white;
+	font-weight: 600;
+	font-size: 17px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.buttonfg:hover {
+	background-color: rgb(0, 100, 170);
+}
+
+.teksarea textarea {
+	height: 81px;
+  	width: 98%;
+  	resize: none;
+    font-family: Montserrat;
+}
