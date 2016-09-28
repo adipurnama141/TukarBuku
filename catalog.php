@@ -2,6 +2,7 @@
 
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="like.js"></script>	
 	<title>TukarBuku</title>
 </head>
 
@@ -71,11 +72,12 @@
         		$harga = $row["Price"];
         		$desc = $row["Description"];
 
-        		$nLike = $row["nLike"];
+        		$nLike = "<span id = 'b". $productID .  "'>". $row["nLike"] . "</span>";
         		$nPurchase = $row["nPurchase"];
 
         		$imgurl = "<img src='img/" . $productID . ".png'>";
-        		$purchaseurl = "<a class='_b'  href='confirmpurchase.php?pid=" . $productID . "'> BUY </a>";
+        		$purchaseurl = "<a class='_b'  href='confirmpurchase.php?pid=" . $productID . "'> <div class='likebuybutton buy'> BUY </div> </a>";
+        		$likeurl = '<div onclick="likeAJAX(this)"" class="likebuybutton like"  id="'. $productID.'"> LIKE </div> ';
         		#echo "PID : ". $productID;
 
 
@@ -90,15 +92,15 @@
 		<table>
 			<tr>
 				<td style="width:20%"> <?php echo $imgurl; ?>  </td>
-				<td style="width:65%"> <h2><b> <?php echo $judulbuku; ?> </b></h2>	
+				<td style="width:60%"> <h2><b> <?php echo $judulbuku; ?> </b></h2>	
 					 <?php echo $harga; ?><br>
 					 <?php echo $desc; ?>
 				</td>
 				<td> <?php echo $nLike; ?> Likes <br> <?php echo $nPurchase; ?> purchases 
 				<table class="twobutton">
 					<tr>
-						<td class="_l">LIKE</td>
-						<td> <?php echo $purchaseurl; ?> </td>
+						<td> <?php echo $likeurl; ?> </td>
+						<td> <?php echo $purchaseurl; ?>  </td>
 					</tr>
 				</table>
 				</td>

@@ -16,7 +16,22 @@ function calculatePrice(){
 }
 
 
+
+
 window.onload = function() {
-var price = document.getElementById("hargabuku").innerHTML;
-document.getElementById("hargabuku_formatted").innerHTML = formatThousands(price);
+	var price = document.getElementById("hargabuku").innerHTML;
+	document.getElementById("hargabuku_formatted").innerHTML = formatThousands(price);
+	document.getElementById("hargatotal").innerHTML = formatThousands(price);
+
+
+	var likebutton = document.getElementsByClassName("like");
+var likeCount = likebutton.length;
+for (var i = 0; i <= likebutton; i += 1) {
+    likebutton[i].onclick = function(e) {
+        alert(this.id);
+    };
+}​
+
+
+
 }

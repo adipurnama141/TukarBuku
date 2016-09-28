@@ -188,9 +188,6 @@ a {
 	font-size:20px;
 }
 
-._l {
-	color :rgb(0, 136, 170);
-}
 
 ._b {
 	color:green;
@@ -244,4 +241,40 @@ a {
   	width: 98%;
   	resize: none;
     font-family: Montserrat;
+}
+
+.likebuybutton {
+  height: 100%;
+  text-align: center;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.likebuybutton:hover {
+	curseor: pointer;
+}
+
+.like {
+	color : rgb(0, 136, 170);
+}
+.like:hover {
+	background-color: rgb(0, 136, 170);
+	color: white;
+	cursor: pointer;
+}
+
+.buy:hover {
+	background-color: green;
+	color: white;
+	cursor: pointer;
+}
+
+.buy a:hover{
+	color:white;
+	}
+
+.liked {
+	color :white;
+	background-color: rgb(0, 136, 170);
 }
