@@ -12,38 +12,25 @@
 
 		<?php include("logindetection.php"); ?>
 
-
 		<table class="navbar">
 			<tr>
-				<td><a href="catalog.php"><div style="width:100%;height:100%; color:black !important;">Catalog</div></a></td>
-				<td class="active">Your Product</td>
-				<td><a href="addproduct.php"> <div style="width:100%;height:100%; color:black !important;">Add Product</div> </a> </td>
-				<td><a href="sales.php"> <div style="width:100%;height:100%; color:black !important;">Sales</div> </a> </td>
-				<td><a href="purchases.php"> <div style="width:100%;height:100%; color:black !important;">Purchases</div> </a> </td>
+				<td > <a href="catalog.php?id_active=<?php echo $id ?>" > Catalog </a> </td>
+				<td><a href="myproduct.php?id_active=<?php echo $id ?>" class="active"> Your Product  </a> </td>
+				<td><a href="addproduct.php?id_active=<?php echo $id ?>"> Add Product </a> </td>
+				<td><a href="sales.php?id_active=<?php echo $id ?>"> Sales</a> </td>
+				<td><a href="purchases.php?id_active=<?php echo $id ?>"> Purchases</a> </td>
 			</tr>
 		</table>
-
-
 		<br>
+
 		<h1>What are you going to sell today?</h1>
 		<hr>
-		<br><br>
-		<strong>
-			<?php
-				echo date("l") . ", " . date("d F Y");
-				echo "</strong> <br>";
-				date_default_timezone_set("Asia/Jakarta");
-				echo "at " . date("h:i");
-			?>
-		
-			
 		<br>
-		<hr>
-
+		<br>
 
 		<?php
 		include("connect.php");
-		$sql = "SELECT * FROM product,user WHERE user.ID = product.IDUser  ORDER BY product.Timestamp DESC";
+		$sql = "SELECT * FROM product,user WHERE user.ID = product.IDUser AND user.id = '$id'  ORDER BY product.Timestamp DESC";
 		$result = mysqli_query($conn, $sql);
 
 		if (mysqli_num_rows($result) > 0) {
@@ -58,7 +45,8 @@
         		$productID = $row["IDproduct"];
      
         		$nama = $row["Username"];
-        		$timephrase = "added this on ". $hari . ", " . $tanggal . ", at " . $jam;
+        		$timephrase = $hari . ", " . $tanggal;
+        		$timephrase2 = "at " .  $jam;
 
         		$judulbuku = $row["Title"];
         		$harga = $row["Price"];
@@ -76,8 +64,8 @@
 
         <br>
 		<div class="book">
-		<h5><?php echo $nama; ?></h5>
-		<?php echo $timephrase; ?>
+		<h5><?php echo $timephrase; ?></h5>
+		<?php echo $timephrase2; ?>
 		<hr>
 		<table>
 			<tr>

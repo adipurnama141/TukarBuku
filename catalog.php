@@ -1,5 +1,4 @@
 <html>
-
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script type="text/javascript" src="like.js"></script>	
@@ -13,19 +12,19 @@
 
 		<?php include("logindetection.php"); ?>
 
-
 		<table class="navbar">
 			<tr>
-				<td > <a href="catalog.php" class="active"> Catalog </a> </td>
-				<td><a href="myproduct.php"> Your Product  </a> </td>
-				<td><a href="addproduct.php"> Add Product </a> </td>
-				<td><a href="sales.php"> Sales</a> </td>
-				<td><a href="purchases.php"> Purchases</a> </td>
+				<td > <a href="catalog.php?id_active=<?php echo $id ?>" class="active"> Catalog </a> </td>
+				<td><a href="myproduct.php?id_active=<?php echo $id ?>"> Your Product  </a> </td>
+				<td><a href="addproduct.php?id_active=<?php echo $id ?>"> Add Product </a> </td>
+				<td><a href="sales.php?id_active=<?php echo $id ?>"> Sales</a> </td>
+				<td><a href="purchases.php?id_active=<?php echo $id ?>"> Purchases</a> </td>
 			</tr>
 		</table>
-
-
 		<br>
+
+
+
 		<h1>What are you going to buy today?</h1>
 		<hr>
 
@@ -69,7 +68,7 @@
         		$timephrase = "added this on ". $hari . ", " . $tanggal . ", at " . $jam;
 
         		$judulbuku = $row["Title"];
-        		$harga = $row["Price"];
+        		$harga = "<span class='harga'>" . $row["Price"] . '</span>';
         		$desc = $row["Description"];
 
         		$nLike = "<span id = 'b". $productID .  "'>". $row["nLike"] . "</span>";
