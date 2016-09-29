@@ -2,6 +2,7 @@
 
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="validation.js"></script>
 	<title>TukarBuku</title>
 </head>
 
@@ -29,7 +30,7 @@
 		<br>
 		<br>
 		<div class="inputwrap">
-			<form action="add.php" method="post" enctype="multipart/form-data">
+			<form  name="loginForm" onsubmit="return(validateAddProduct());" action="add.php" method="post" enctype="multipart/form-data">
 			<label>Name</label><BR>
 			<input type="text" name="product_name"></input><BR>
 

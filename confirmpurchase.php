@@ -1,12 +1,44 @@
-<script type="text/javascript" src="pricecalculate.js"></script>
+
+
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="pricecalculate.js"></script>
+	<script type="text/javascript" src="validation.js"></script>
 <script type="text/javascript">
     function confirmation() {
     	return confirm("Apakah data yang Anda masukan benar?");
     }
 </script>
+	<title>TukarBuku</title>
+</head>
+
+<body>
+	<div class="wrapper catalog">
+		<img src="logo.png" align="middle">
+		
+
+		<?php include("logindetection.php"); ?>
+
+
+		<table class="navbar">
+			<tr>
+				<td > <a href="catalog.php?id_active=<?php echo $id ?>" class="active"> Catalog </a> </td>
+				<td><a href="myproduct.php?id_active=<?php echo $id ?>"> Your Product  </a> </td>
+				<td><a href="addproduct.php?id_active=<?php echo $id ?>"> Add Product </a> </td>
+				<td><a href="sales.php?id_active=<?php echo $id ?>"> Sales</a> </td>
+				<td><a href="purchases.php?id_active=<?php echo $id ?>"> Purchases</a> </td>
+			</tr>
+		</table>
+		<br>
+
+
+
+
+
 <?php 
 
-	include("header.php"); 
+	
 	include("connect.php");
 
 	$product_ID = $_GET["pid"];
@@ -51,7 +83,7 @@
 		
 		<span id="hargabuku" style="display:none;"> <?php echo $harga ?> </span>
 
-		<form action="purchase.php" method="post"  	>
+		<form name="loginForm"  onsubmit="return(validatePurchase());" action="purchase.php" method="post"  	>
 		
 		<table>
 			<tr> 
@@ -85,6 +117,7 @@
 
 			
 				<?php echo ' <input type="text" name="productID" style="display:none;" value = "' . $product_ID . '"></input> ' ; ?>
+
 		
 
 				<label>Consignee</label><BR>
@@ -107,7 +140,8 @@
 
 				<button class="bluebutton s_update" onclick="return confirmation()" type="submit">CONFIRM</button>
 			</form>
-			<a href="catalog.php"><button class="bluebutton s_cancel">CANCEL</button></a>
+				<?php echo ' <a class="bluebutton" style="line-height:2" href="catalog.php?id_active='. $id . ' ">  CANCEL  </a>  '; ?>
+				
 		</div>
 
 	</div>

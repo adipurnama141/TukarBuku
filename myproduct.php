@@ -66,7 +66,8 @@
 
         		$likeurl = '<div onclick="likeAJAX(this)"" class="likebuybutton like editbutton"  id="'. $productID.'"> EDIT </div> ';
       
-        		$purchaseurl = "<a class='_b' onclick= 'return confirmation()'  href='delete.php?id_active=".$id ."&pid=" . $productID . "'> <div class='likebuybutton buy deletebutton'> DELETE </div> </a>";        		
+      			$likeurl = "<a class='_b'   href='editproduct.php?id_active=".$id ."&pid=" . $productID . "'> <div class='likebuybutton buy editbutton'> EDIT </div> </a>";        		
+        		$purchaseurl = "<a class='_b'   href='delete.php?id_active=".$id ."&pid=" . $productID . "'> <div class='likebuybutton buy deletebutton'> DELETE </div> </a>";        		
 
         ?>
 
