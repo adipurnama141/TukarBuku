@@ -1,8 +1,14 @@
+<!DOCTYPE html>
 <html>
 
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<title>TukarBuku</title>
+	<script type="text/javascript">
+    function confirmation() {
+    	return confirm("Apa Anda yakin ingin menghapus produk ini?");
+    }
+</script>
 </head>
 
 <body>
@@ -49,7 +55,7 @@
         		$timephrase2 = "at " .  $jam;
 
         		$judulbuku = $row["Title"];
-        		$harga = $row["Price"];
+        		$harga = "IDR " . number_format($row["Price"], 0, ',', '.');
         		$desc = $row["Description"];
 
         		$nLike = $row["nLike"];
@@ -58,6 +64,9 @@
         		$imgurl = "<img src='img/" . $productID . ".png'>";
         		#echo "PID : ". $productID;
 
+        		$likeurl = '<div onclick="likeAJAX(this)"" class="likebuybutton like editbutton"  id="'. $productID.'"> EDIT </div> ';
+      
+        		$purchaseurl = "<a class='_b' onclick= 'return confirmation()'  href='delete.php?id_active=".$id ."&pid=" . $productID . "'> <div class='likebuybutton buy deletebutton'> DELETE </div> </a>";        		
 
         ?>
 
@@ -70,15 +79,15 @@
 		<table>
 			<tr>
 				<td style="width:20%"> <?php echo $imgurl; ?>  </td>
-				<td style="width:65%"> <h2><b> <?php echo $judulbuku; ?> </b></h2>	
+				<td style="width:60%"> <h2><b> <?php echo $judulbuku; ?> </b></h2>	
 					 <?php echo $harga; ?><br>
 					 <?php echo $desc; ?>
 				</td>
 				<td> <?php echo $nLike; ?> Likes <br> <?php echo $nPurchase; ?> purchases 
 				<table class="twobutton">
 					<tr>
-						<td class="_e"><strong>EDIT<strong></td>
-						<td class="_d"><strong>DELETE<strong></td>
+						<td> <?php echo $likeurl; ?> </td>
+						<td> <?php echo $purchaseurl; ?>  </td>
 					</tr>
 				</table>
 				</td>

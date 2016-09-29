@@ -14,16 +14,16 @@
 
 		<table class="navbar">
 			<tr>
-				<td><a href="catalog.php"> <div style="width:100%;height:100%; color:black !important;">Catalog</div> </a></td>
-				<td><a href="myproduct.php"> <div style="width:100%;height:100%; color:black !important;">Your Product</div> </a></td>
-				<td class="active">Add Product</td>
-				<td><a href="sales.php"> <div style="width:100%;height:100%; color:black !important;">Sales</div> </a> </td>
-				<td><a href="purchases.php"> <div style="width:100%;height:100%; color:black !important;">Purchases</div> </a> </td>
+				<td > <a href="catalog.php?id_active=<?php echo $id ?>" > Catalog </a> </td>
+				<td><a href="myproduct.php?id_active=<?php echo $id ?>" > Your Product  </a> </td>
+				<td><a href="addproduct.php?id_active=<?php echo $id ?>" class="active"> Add Product </a> </td>
+				<td><a href="sales.php?id_active=<?php echo $id ?>"> Sales</a> </td>
+				<td><a href="purchases.php?id_active=<?php echo $id ?>"> Purchases</a> </td>
 			</tr>
 		</table>
+		<br>
 
-		<br>
-		<br>
+
 		<h1>Please add your product here</h1>
 		<hr>
 		<br>

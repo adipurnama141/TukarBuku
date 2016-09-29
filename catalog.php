@@ -68,7 +68,7 @@
         		$timephrase = "added this on ". $hari . ", " . $tanggal . ", at " . $jam;
 
         		$judulbuku = $row["Title"];
-        		$harga = "<span class='harga'>" . $row["Price"] . '</span>';
+        		$harga = "IDR " . number_format($row["Price"], 0, ',', '.');
         		$desc = $row["Description"];
 
         		$nLike = "<span id = 'b". $productID .  "'>". $row["nLike"] . "</span>";

@@ -30,6 +30,10 @@ $sql = "INSERT INTO purchase (IDuser, IDproduct, Qty, Consignee, Address , Posta
 
 if(mysqli_query($conn, $sql)){
     echo "Records added successfully. last_ID : ";
+    header("Location: purchases.php?id_active=". $UserID);
+	die();
+
+
 } else{
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
 }

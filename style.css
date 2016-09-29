@@ -299,3 +299,20 @@ a {
 	color :white;
 }
 
+.editbutton {
+	color : rgb(255, 116, 0) !important
+}
+
+.editbutton:hover {
+	color : white !important;
+	background-color : rgb(255, 116, 0) !important
+}
+
+.deletebutton {
+	color : red !important;
+}
+
+.deletebutton:hover{
+	color : white !important;
+	background-color : red !important;
+}

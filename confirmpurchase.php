@@ -1,5 +1,9 @@
 <script type="text/javascript" src="pricecalculate.js"></script>
-
+<script type="text/javascript">
+    function confirmation() {
+    	return confirm("Apakah data yang Anda masukan benar?");
+    }
+</script>
 <?php 
 
 	include("header.php"); 
@@ -101,7 +105,7 @@
 				<label>3 Digits Card Verification Value</label><br>
 				<input type="text" name="card_verification"></input><br>
 
-				<button class="bluebutton s_update" type="submit">CONFIRM</button>
+				<button class="bluebutton s_update" onclick="return confirmation()" type="submit">CONFIRM</button>
 			</form>
 			<a href="catalog.php"><button class="bluebutton s_cancel">CANCEL</button></a>
 		</div>

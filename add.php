@@ -29,6 +29,9 @@ if(mysqli_query($conn, $sql)){
     }
 
 
+	header("Location: myproduct.php?id_active=". $uploaderID);
+	die();
+
 
 
 } else{

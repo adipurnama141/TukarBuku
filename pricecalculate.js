@@ -30,8 +30,7 @@ for (var i = 0; i <= likebutton; i += 1) {
     likebutton[i].onclick = function(e) {
         alert(this.id);
     };
-}​
 
-
+ }
 
 }
