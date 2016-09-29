@@ -16,11 +16,11 @@
 
 		<table class="navbar">
 			<tr>
-				<td class="active">Catalog</td>
-				<td><a href="myproduct.php"> <div style="width:100%;height:100%; color:black !important;">Your Product</div> </a> </td>
-				<td><a href="addproduct.php"> <div style="width:100%;height:100%; color:black !important;">Add Product</div> </a> </td>
-				<td><a href="sales.php"> <div style="width:100%;height:100%; color:black !important;">Sales</div> </a> </td>
-				<td><a href="purchases.php"> <div style="width:100%;height:100%; color:black !important;">Purchases</div> </a> </td>
+				<td > <a href="catalog.php" class="active"> Catalog </a> </td>
+				<td><a href="myproduct.php"> Your Product  </a> </td>
+				<td><a href="addproduct.php"> Add Product </a> </td>
+				<td><a href="sales.php"> Sales</a> </td>
+				<td><a href="purchases.php"> Purchases</a> </td>
 			</tr>
 		</table>
 
@@ -75,10 +75,27 @@
         		$nLike = "<span id = 'b". $productID .  "'>". $row["nLike"] . "</span>";
         		$nPurchase = $row["nPurchase"];
 
+        		$loggedInUser = $_GET["id_active"];
+
+        		$sql_like = "SELECT ID FROM like_db WHERE UserID = '$loggedInUser' and productID = '$productID' ";
+        		$resultlike = mysqli_query($conn,$sql_like);
+        		$isLiked = mysqli_num_rows($resultlike);
+        	
+
+        		$likeurl;
+        		if ($isLiked == 1) {
+        			$likeurl = '<div onclick="unlikeAJAX(this)"" class="likebuybutton like liked"  id="'. $productID.'"> LIKED </div> ';
+        		}
+        		else {
+        			$likeurl = '<div onclick="likeAJAX(this)"" class="likebuybutton like"  id="'. $productID.'"> LIKE </div> ';
+        		}
+
+        
         		$imgurl = "<img src='img/" . $productID . ".png'>";
-        		$purchaseurl = "<a class='_b'  href='confirmpurchase.php?pid=" . $productID . "'> <div class='likebuybutton buy'> BUY </div> </a>";
-        		$likeurl = '<div onclick="likeAJAX(this)"" class="likebuybutton like"  id="'. $productID.'"> LIKE </div> ';
-        		#echo "PID : ". $productID;
+        		$purchaseurl = "<a class='_b'  href='confirmpurchase.php?id_active=".$loggedInUser ."&pid=" . $productID . "'> <div class='likebuybutton buy'> BUY </div> </a>";
+        		
+
+        		
 
 
         ?>

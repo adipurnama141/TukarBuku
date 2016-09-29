@@ -3,11 +3,11 @@
 			session_start();
 			include("connect.php");
 			if( ((isset($_SESSION["UserID"])) == 0) ) {
-				echo "not logged in";
 			}
 			else {
 				include("connect.php");
 				$id = $_SESSION["UserID"];
+				$id = $_GET["id_active"];
 				$sql = "SELECT Username FROM user WHERE ID = '$id' ";
 				$result = mysqli_query($conn, $sql);
 				while ( $row = mysqli_fetch_array($result)) {

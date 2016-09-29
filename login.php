@@ -36,7 +36,7 @@ if($count == 1) {
 	}
 	echo "user id kamu" . $UserID;
 	$_SESSION["UserID"] = $UserID;
-	header("Location: catalog.php");
+	header("Location: catalog.php?id_active=". $UserID);
 	die();
 
 }

@@ -1,0 +1,17 @@
+LOGIN
+	Jadi index web [OK]
+	Otentifikasi dengan GET 
+	Validasi tak kosong [OK]
+	Username/Email [OK]
+	Migrasi SESSION -? GET -__-"" 
+
+REGISTER
+	
+
+
+CATALOG
+	AJAX LIKE [OK]
+
+
+ALL 
+	HeaderPHP [On Progress]
