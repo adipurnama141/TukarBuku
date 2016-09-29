@@ -1,10 +1,16 @@
 <?php
 			#error_reporting(0);
 			session_start();
+
+			global $isLoggedIn;
+			global $id;
+
 			include("connect.php");
-			if( ((isset($_SESSION["UserID"])) == 0) ) {
+			if( ((isset($_SESSION["UserID"])) == 0) or ((isset($_GET["id_active"])) == 0) ) {
+				$isLoggedIn = false;
 			}
 			else {
+				$isLoggedIn = true;
 				include("connect.php");
 				$id = $_SESSION["UserID"];
 				$id = $_GET["id_active"];

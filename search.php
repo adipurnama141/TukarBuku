@@ -12,23 +12,26 @@
 
 		<?php include("logindetection.php"); ?>
 
-
 		<table class="navbar">
 			<tr>
-				<td class="active">Catalog</td>
-				<td><a href="myproduct.php"> <div style="width:100%;height:100%; color:black !important;">Your Product</div> </a> </td>
-				<td><a href="addproduct.php"> <div style="width:100%;height:100%; color:black !important;">Add Product</div> </a> </td>
-				<td><a href="sales.php"> <div style="width:100%;height:100%; color:black !important;">Sales</div> </a> </td>
-				<td><a href="purchases.php"> <div style="width:100%;height:100%; color:black !important;">Purchases</div> </a> </td>
+				<td > <a href="catalog.php?id_active=<?php echo $id ?>" class="active"> Catalog </a> </td>
+				<td><a href="myproduct.php?id_active=<?php echo $id ?>"> Your Product  </a> </td>
+				<td><a href="addproduct.php?id_active=<?php echo $id ?>"> Add Product </a> </td>
+				<td><a href="sales.php?id_active=<?php echo $id ?>"> Sales</a> </td>
+				<td><a href="purchases.php?id_active=<?php echo $id ?>"> Purchases</a> </td>
 			</tr>
 		</table>
-
-
 		<br>
+
 		<h1>What are you going to buy today?</h1>
 		<hr>
 
-		<form action="search.php" method="post" >
+
+
+		<?php
+			$form = "<form action = 'search.php?id_active=" . $id . "' method='post'>";
+			echo $form;
+		?>
 		<table class="search">
 			<tr>
 				
@@ -56,7 +59,6 @@ $search_query = $_POST["search"];
 
 $search_query_fix = "%". $search_query . "%";
 $search_type = $_POST["Type"];
-
 echo $search_type;
 
 

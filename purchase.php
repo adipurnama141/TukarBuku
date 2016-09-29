@@ -30,7 +30,7 @@ $sql = "INSERT INTO purchase (IDuser, IDproduct, Qty, Consignee, Address , Posta
 
 if(mysqli_query($conn, $sql)){
     echo "Records added successfully. last_ID : ";
-    header("Location: purchases.php?id_active=". $UserID);
+    header("Location: purchases.php?id_active=". $IDuser);
 	die();
 
 

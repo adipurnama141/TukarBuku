@@ -12,6 +12,7 @@
 
 		<?php include("logindetection.php"); ?>
 
+
 		<table class="navbar">
 			<tr>
 				<td > <a href="catalog.php?id_active=<?php echo $id ?>" class="active"> Catalog </a> </td>
@@ -25,10 +26,21 @@
 
 
 
+
 		<h1>What are you going to buy today?</h1>
 		<hr>
 
-		<form action="search.php" method="post" >
+		<?php
+			$form;
+			if ($isLoggedIn) {
+				$form = "<form action = 'search.php?id_active=" . $id . "' method='post'>";
+			}
+			else {
+				$form = "<form action = 'search.php method='post'>";
+			}
+			echo $form;
+		?>
+
 		<table class="search">
 			<tr>
 				
@@ -74,14 +86,19 @@
         		$nLike = "<span id = 'b". $productID .  "'>". $row["nLike"] . "</span>";
         		$nPurchase = $row["nPurchase"];
 
-        		$loggedInUser = $_GET["id_active"];
+        		$loggedInUser = $id;
 
         		$sql_like = "SELECT ID FROM like_db WHERE UserID = '$loggedInUser' and productID = '$productID' ";
         		$resultlike = mysqli_query($conn,$sql_like);
         		$isLiked = mysqli_num_rows($resultlike);
+
+        		$imgurl = "<img src='img/" . $productID . ".png'>";
         	
 
         		$likeurl;
+        		$purchaseurl;
+
+        		if ($isLoggedIn) {
         		if ($isLiked == 1) {
         			$likeurl = '<div onclick="unlikeAJAX(this)"" class="likebuybutton like liked"  id="'. $productID.'"> LIKED </div> ';
         		}
@@ -89,11 +106,13 @@
         			$likeurl = '<div onclick="likeAJAX(this)"" class="likebuybutton like"  id="'. $productID.'"> LIKE </div> ';
         		}
 
-        
-        		$imgurl = "<img src='img/" . $productID . ".png'>";
         		$purchaseurl = "<a class='_b'  href='confirmpurchase.php?id_active=".$loggedInUser ."&pid=" . $productID . "'> <div class='likebuybutton buy'> BUY </div> </a>";
         		
-
+        		}
+        		else {
+        			$likeurl = "<a class='_b'  href='index.php'> <div class='likebuybutton like'> LIKE </div> </a>";
+        			$purchaseurl = "<a class='_b'  href='index.php'> <div class='likebuybutton buy'> BUY </div> </a>";
+        		}
         		
 
 
