@@ -117,7 +117,8 @@
 
 			
 				<?php echo ' <input type="text" name="productID" style="display:none;" value = "' . $product_ID . '"></input> ' ; ?>
-
+				<?php echo ' <input type="text" name="namaBarang" style="display:none;" value = "' . $judulbuku . '"></input> ' ; ?>
+				<?php echo ' <input type="text" name="hargaBarang" style="display:none;" value = "' . $harga . '"></input> ' ; ?>
 		
 
 				<label>Consignee</label><BR>

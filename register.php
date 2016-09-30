@@ -43,8 +43,10 @@ $sql = "INSERT INTO user (FullName, Username, Email, Password, Address, PostalCo
 if(mysqli_query($conn, $sql)){
     echo "Records added successfully.";
     session_start();
+    
     $_SESSION["UserID"] = mysqli_insert_id($conn);
-    header("Location: catalog.php");
+    $UserID = mysqli_insert_id($conn);
+    header("Location: catalog.php?id_active=". $UserID);
 	die();
 
 

@@ -12,6 +12,8 @@ $postal = $_POST["postal_code"];
 $phone = $_POST["phone_number"];
 $CCN =$_POST["card_number"];
 $CVV =$_POST["card_verification"];
+$hargaBarang = $_POST["hargaBarang"];
+$namaBarang = $_POST["namaBarang"];
 
 
 
@@ -24,8 +26,8 @@ if(mysqli_query($conn, $sqlone)){
 }
 
 
-$sql = "INSERT INTO purchase (IDuser, IDproduct, Qty, Consignee, Address , Postal , Phone, CCN, CVV) VALUES 
-('$IDuser', '$IDproduct', '$qty' , '$consignee', '$address' , '$postal' , '$phone' , '$CCN' , '$CVV')";
+$sql = "INSERT INTO purchase (IDuser, IDproduct, Qty, Consignee, Address , Postal , Phone, CCN, CVV ,HargaBarang, NamaBarang) VALUES 
+('$IDuser', '$IDproduct', '$qty' , '$consignee', '$address' , '$postal' , '$phone' , '$CCN' , '$CVV' , '$hargaBarang' , '$namaBarang')";
 
 
 if(mysqli_query($conn, $sql)){
